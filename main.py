@@ -73,7 +73,7 @@ def medha_ai(message):
         bot.reply_to(message, reply)
 
     except Exception as e:
-    print("ERROR:", e)
+        print("ERROR:", e)
     bot.reply_to(message, f"ERROR: {e}")
 
 # 🚀 Run bot safely
