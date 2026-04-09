@@ -10,7 +10,7 @@ bot = telebot.TeleBot(API_TOKEN)
 
 # 🤖 Gemini setup
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-1.5-pro")
+model = genai.GenerativeModel("models/gemini-pro")
 
 # 👑 ADMIN ID (PUT YOUR ID HERE)
 ADMIN_ID = 5038164790  # replace with your real Telegram ID
