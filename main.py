@@ -66,11 +66,16 @@ def medha_ai(message):
         {context}
         """
 
-        response = model.generate_content(prompt)
+        try:
+            response = model.generate_content(prompt)
 
-        reply = response.text if response.text else "😊 একটু পরে আবার বলো..."
+            reply = response.text if response.text else "😊 একটু পরে আবার বলো..."
 
-        bot.reply_to(message, reply)
+            bot.reply_to(message, reply)
+
+        except Exception as e:
+            print("ERROR:", e)
+            bot.reply_to(message, f"ERROR: {e}")
 
     except Exception as e:
         print("ERROR:", e)
@@ -81,6 +86,7 @@ print("Medha AI Bot Running...")
 
 while True:
     try:
-        bot.polling(none_stop=True, interval=2)
+        bot.polling(none_stop=True,
+ interval=2)
     except Exception as e:
         print(f"Error: {e}")
